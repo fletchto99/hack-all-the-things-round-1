@@ -1,0 +1,76 @@
+body, html, #wrapper { height: 100%; width: 100%; } /* Create space for elements to be 100% */
+#wrapper { display: table; } /* Create a table-structure */
+#wrapper > * { display: table-row; } /* All direct children behave as rows */
+#wrapper > header, 
+#wrapper > footer { min-height: 100px; } /* These must be at least 100px */
+#main { height: 100%; } /* Let the mid section fill up the remaining space */
+
+body{
+	background: #333;
+	color: #AAA;
+}
+footer > div{
+	padding: 20px;
+    border-top: solid 1px #111;
+    background-color: #222;
+}
+.navbar{
+	border-radius: 0;
+}
+.navbar-default{
+	background-color: #222;
+    border-color: #111;
+}
+.navbar-header .navbar-brand:first-child{
+	padding: 0;
+	margin-right: 5px;
+}
+.navbar-header .navbar-brand:first-child img{
+	height: 50px;
+}
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	background-color: #111;
+}
+.push-top{
+	margin-top: 20px;
+}
+
+.positionsList{
+	list-style: none;
+	padding: 0;
+}
+.positionsList li a{
+	display: block;
+}
+.positionsList li{
+	border-bottom: solid 1px #666;
+	padding: 15px 5px;
+}
+.bg-area{
+	background: url('/img/graph.jpg') no-repeat;
+	background-size: cover;
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+	height: 400px;
+    position: absolute;
+    display: block;
+    width: 100%;
+}
+.text-area{
+	background-color: rgba(255, 255, 255, 0.28);
+	color: #000;
+}
+.text-area h3{
+	margin-top: 10px;
+}
+.text-area-container{
+	margin-top: 250px;
+}
+.text-area .btn-lg{
+	position: absolute;
+    top: calc(50% - 23px);
+    right: 15px;
+}

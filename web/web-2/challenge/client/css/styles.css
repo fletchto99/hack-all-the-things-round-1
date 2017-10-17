@@ -1,0 +1,44 @@
+body{
+	background: #000;
+}
+.bg-container{
+	position: absolute;
+	width: 100%;
+	top: 0;
+	z-index: -1;
+	color: #638396;
+	font-family: Courier;
+	font-weight: bold;
+}
+.binary{
+	padding: 1px;
+}
+.bg-container .binary{
+	display: inline-block;
+}
+.login-form{
+	text-align: center;
+	max-width: 350px;
+	margin: auto;
+}
+h1{
+	color: #638396;
+}
+.panel-cool{
+	border-color: #638396;
+	box-shadow: 0px 0px 23px #7ebce0;
+	background: rgba(140, 182, 208, 0.52);
+}
+.btn-cool{
+	color: #98bfd6;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-color: #638396;
+}
+.btn-cool:hover{
+	color: #638396;
+}
+.form-cool{
+	color: #98bfd6;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-color: #638396;
+}

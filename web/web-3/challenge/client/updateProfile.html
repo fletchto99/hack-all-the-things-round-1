@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="col-sm-12" ng-controller="UpdateController as recruit">
+		<h1>Update Profile</h1>
+		<p>Upload a new version of your resume here</p>
+		<form>
+			<div class="form-group">
+				<label for="resume">Resume</label>
+				<input type="file" id="resume" ng-model="recruit.resume">
+				<p class="help-block">Please upload your CV here</p>
+			</div>
+			<button class="btn btn-primary" id="submit" ng-click="recruit.submit()">Upload</button>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="recruitingApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>E Corp Application</title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+  	<div id="wrapper">
+	  <header>
+	  	<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <a class="navbar-brand" ui-sref="home">
+		        <img alt="Brand" src="img/ECorp.png">
+		      </a>
+		      <a class="navbar-brand" href="#"> E Corp</a>
+		    </div>
+		    <ul class="nav navbar-nav">
+	        	<li ui-sref="positions" ui-sref-active="active"><a href="#/positions">Positions</a></li>
+	        	<li ui-sref="update" ui-sref-active="active"><a href="#/update">Update Your Profile</a></li>
+	        </ul>
+		  </div>
+		</nav>
+	  </header>
+	  <div id="main">
+		<ui-view></ui-view>
+	  </div>
+	  <footer class="text-center">
+	  	<div>&copy; Copyright E Corp</div>
+	  </footer>
+	</div>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-cookies.js"></script>
+  	<script src="js/angular-ui-router.js"></script>
+  	<script>
+    	var recruitingApp = angular.module('recruitingApp', ['ui.router','ngCookies']);
+
+    	recruitingApp.config(function($stateProvider, $urlRouterProvider) {
+    	  var homeState = {
+    	  	name: 'home',
+    	  	url: '/',
+    	  	templateUrl: 'home.html'
+    	  }
+		  var positionsState = {
+		    name: 'positions',
+		    url: '/positions',
+		    templateUrl: 'positions.html'
+		  }
+
+		  var positionState = {
+		    name: 'position',
+		    url: '/position/:positionId',
+		    templateUrl: 'position.html'
+		  }
+
+		  var updateProfileState = {
+		    name: 'update',
+		    url: '/update',
+		    templateUrl: 'updateProfile.html'
+		  }
+
+		  $stateProvider.state(homeState);
+		  $stateProvider.state(positionsState);
+		  $stateProvider.state(positionState);
+		  $stateProvider.state(updateProfileState);
+
+		  $urlRouterProvider.otherwise('/');
+		});
+  	</script>
+  	<script src="js/recruitService.js"></script>
+  	<script src="js/RecruitingAppController.js"></script>
+  	<script src="js/PositionsController.js"></script>
+  	<script src="js/UpdateController.js"></script>
+  	<script src="js/PositionController.js"></script>
+  	<!-- reference: the text from this page was taken from an actual posting: https://jobs.dell.com/job/hopkinton/advisor-it-security-179833br/375/5952699 -->
+  </body>
+</html>

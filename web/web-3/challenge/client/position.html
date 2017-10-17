@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="col-sm-12" ng-controller="PositionController as recruit">
+  	<div ng-if="!recruit.hasError">
+		<h1>{{recruit.position.title}}</h1>
+		<p><strong>Job ID:</strong> {{recruit.position.jobID}}</p>
+		<p><strong>Date posted:</strong> {{recruit.position.datePosted | date:'MM/dd/yyyy'}}</p>
+		<p><strong>Location:</strong> {{recruit.position.location}}</p>
+		<p>{{recruit.position.description}}</p>
+
+		<form>
+			<div class="form-group">
+				<label for="resume">Resume</label>
+				<input type="file" id="resume" ng-model="recruit.resume">
+				<p class="help-block">Please upload your CV here</p>
+			</div>
+			<button class="btn btn-primary" id="submit" ng-click="recruit.submit()">Apply Now</button>
+		</form>
+	</div>
+	<div class="alert-container push-top">
+		<div class="alert alert-danger" role="alert" ng-if="recruit.hasError">An issue was encountered while trying to retreive the requested job posting</div>
+		<div class="alert alert-danger" role="alert" ng-if="recruit.hasApplyError">{{recruit.errorMessage}}</div>
+		<div class="alert alert-success" role="alert" ng-if="recruit.hasApplySuccess">{{recruit.successMessage}}</div>
+	</div>
+  </div>
+</div>

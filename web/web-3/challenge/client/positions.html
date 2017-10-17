@@ -1,0 +1,13 @@
+<div class="container">
+  	<div class="col-sm-12" ng-controller="PositionsController as positions">
+		<h1>Available Positions</h1>
+		<ul class="positionsList">
+			<li ng-repeat="position in positions.availablePositions">
+				<a ui-sref="position({'positionId': '{{position.id}}'})">
+					{{position.title}}
+				</a>
+				<span>{{position.location}} {{position.datePosted | date:'MM/dd/yyyy'}}</span>
+			</li>
+		</ul>
+	</div>
+</div>
