@@ -49,6 +49,15 @@ const sha1 = path => new Promise((resolve, reject) => {
 	rs.on('end', () => resolve(hash.digest('hex')))
 });
 
+const sha512 = path => new Promise((resolve, reject) => {
+	const hash = crypto.createHash('sha512')
+	const rs = fs.createReadStream(path)
+	rs.on('error', reject)
+	rs.on('data', chunk => hash.update(chunk))
+	rs.on('end', () => resolve(hash.digest('hex')))
+});
+
+
 /*API*/
 router.get('/positions', (req, res)=>{
 	res.json([
@@ -77,7 +86,7 @@ router.post('/apply', (req, res)=>{
 	}else{
 		// console.log(req.files.file.path);
 		users[req.cookies.userID] = {file0:req.files.file.path};
-		res.status(200).json({msg:'Your application has been received! You will contact you within 15 business days.'});
+		res.status(200).json({msg:'Your application has been received! You will contact you within 15 business days. Should you need to update your resume you can do it at any point via the "Update" page'});
 	}
 });
 
@@ -108,13 +117,31 @@ router.post('/update', (req, res)=>{
 	}).catch(err=>{
 		throw new Error(err);
 	});
-	Promise.all([hash0Promise, hash1Promise]).then(hashes=>{
+
+
+	let hash0ValidatePromise = sha512(users[req.cookies.userID].file0).then(hash=>{
+		return hash;
+	}).catch(err=>{
+		throw new Error(err);
+	});
+
+	let hash1ValidatePromise = sha512(users[req.cookies.userID].file1).then(hash=>{
+		return hash;
+	}).catch(err=>{
+		throw new Error(err);
+	});
+
+	Promise.all([hash0Promise, hash1Promise, hash0ValidatePromise, hash1ValidatePromise]).then(hashes=>{
 		console.log(hashes);
 		if(hashes[0]!==hashes[1]){
-			res.status(400).json({msg:'Sorry, the CV you uploaded does not match your profile'});
+			res.status(400).json({msg:'Integrity mismatch! No matching resume found?'});
 			return;
 		}else if(hashes[0]===hashes[1]){
-			res.status(200).json({msg:'Your profile has been updated! flag{sha1-Collisions_ARR_C00L}'});
+			if (hashes[2] === hashes[3]) {
+				res.status(400).json({msg:'You\'ve already uploaded that resume! No changes detected?'});
+			} else {
+				res.status(200).json({msg:'Your profile has been updated! flag{sha1-Collisions_ARR_C00L}'});
+			}
 			return;
 		}
 		res.status(500).json({msg:'An unknown error occured'});
