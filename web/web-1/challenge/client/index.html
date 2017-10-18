@@ -5,14 +5,40 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Download that Flag</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/vendor/animate.css">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.5/bootstrap-notify.js"></script>
+        <script src="/vendor/fileDownload.js"></script>
+        <script>
+            $(function() {
+                $("#download").click(function() {
+                    var file = "flag"
+                    var check = "116AB7B0A95104DD30AE38ABEE66EA6B41E3599820D297CBE59E9C237BC0AA45E928D07EEEC3BA5F5A0C7024EBCED1E9957FF6E2444FAB482393F0B125800C88"
+                    $.fileDownload("/api/download?file="+file+"&check="+check, {
+                        successCallback: function (url) {
+                            alert('test');
+                        },
+                        failCallback: function (html, url) {
+                            var error = JSON.parse(html.replace(/<\/?[^>]+>/gi, ''));
+                            $.notify({
+                                message: error.error
+                            },{
+                                type: 'danger',
+                                    animate: {
+                                        enter: 'animated fadeInDown',
+                                        exit: 'animated fadeOutUp'
+                                    },
+                            });
+                        }
+                    });
+                });
+            });
+        </script>
     </head>
     <body>
-        <form id="flag" action="/api/download">
-            <input type="hidden" name="file" value="flag" />
-            <input type="hidden" name="check" value="94eb179a29fd000eba77fa7ad6f0184f56d54460495db8a1d4225bbd4684a714d41fc133317c893fa9f3cb3bdf73a098edc178b5e7cb35feb340f3dea5cf990c" />
-            <button type="submit" style="width:300px; height: 80px;" class="btn btn-danger centered">Download Flag</button>
-        </form>
+        <button type="submit" id="download" style="width:300px; height: 80px;" class="btn btn-danger centered">Download Flag</button>
     </body>
 </html>
