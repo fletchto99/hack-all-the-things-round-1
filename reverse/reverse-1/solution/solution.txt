@@ -1,0 +1,13 @@
+-- STEP 1 --
+
+let eval = content => console.log(content); //redefine eval to print contents, ; is a must since the vm doesn't see the newlines in JSFuck. Without a ; an error is thrown which makes it obvious
+
+-- STEP 2 --
+
+save the output from executing step 1 into a file:
+
+"node step1 > out"
+
+-- STEP 3 --
+
+Notice that there is /* flag += */ commented out, that is the grouping of the whitespace into ascii chars. Create a flag var and console log it.

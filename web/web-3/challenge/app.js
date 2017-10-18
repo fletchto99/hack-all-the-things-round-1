@@ -114,7 +114,7 @@ router.post('/update', (req, res)=>{
 			res.status(400).json({msg:'Sorry, the CV you uploaded does not match your profile'});
 			return;
 		}else if(hashes[0]===hashes[1]){
-			res.status(200).json({msg:'Your profile has been updated! flag{ sha1-Collisions_ARR_C00L }'});
+			res.status(200).json({msg:'Your profile has been updated! flag{sha1-Collisions_ARR_C00L}'});
 			return;
 		}
 		res.status(500).json({msg:'An unknown error occured'});

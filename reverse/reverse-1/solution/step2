@@ -1,0 +1,5 @@
+let flag = "";
+
+/* Try to find the flag, it should be hiding in here somewhere according to our reliable source! *//		  		 		 		  		    			  							 					 					 	    		 	  	 	 	  	 					 		   		 	  			 							 	 	 			  			   		 			 	 			   				 	 							 	/.source.replace(/.{7}/g,function(w){flag += String.fromCharCode(parseInt(w.replace(/ /g,'0').replace(/	/g,'1'),2))});
+
+console.log(flag);
