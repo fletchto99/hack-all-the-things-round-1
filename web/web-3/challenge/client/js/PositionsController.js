@@ -4,7 +4,6 @@ recruitingApp.controller('PositionsController', function(recruitService){
   positions.availablePositions = [];
 
   recruitService.getPositions().then(function(data){
-  	console.log(data)
   	positions.availablePositions = data;
   });
 });

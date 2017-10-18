@@ -13,7 +13,6 @@ recruitingApp.controller('PositionController', function(recruitService, $statePa
   }, function(err){
   	recruit.errorMessage = 'An issue was encountered while trying to retreive the requested job posting';
   	recruit.hasError = true;
-  	console.log(err)
   });
 
   recruit.submit = function(){
@@ -24,11 +23,9 @@ recruitingApp.controller('PositionController', function(recruitService, $statePa
     recruitService.sendApplication(formData).then(function(res){
     	recruit.successMessage = res.msg;
     	recruit.hasApplySuccess = true;
-    	console.log(res);
     }, function(err){
     	recruit.errorMessage = err.data.msg;
     	recruit.hasApplyError = true;
-    	console.log(err);
     });
   };
 });

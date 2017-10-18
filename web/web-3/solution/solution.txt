@@ -1,0 +1,4 @@
+create two PDFs with the same sha1 checksum. The example in the sha1collider/ can be used
+upload the first one when applying for the position
+upload the second one to the update profile page
+

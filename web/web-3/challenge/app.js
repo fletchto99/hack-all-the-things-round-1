@@ -7,6 +7,8 @@ let server = app.listen(8080);
 let bodyParser = require('body-parser');
 let cookieParser = require('cookie-parser');
 let router = express.Router();
+let crypto = require('crypto');
+let fs = require('fs');
 
 app.use(express.static(__dirname + '/client'));
 
@@ -38,6 +40,14 @@ let position = {
 }
 
 let users = {};
+
+const sha1 = path => new Promise((resolve, reject) => {
+	const hash = crypto.createHash('sha1')
+	const rs = fs.createReadStream(path)
+	rs.on('error', reject)
+	rs.on('data', chunk => hash.update(chunk))
+	rs.on('end', () => resolve(hash.digest('hex')))
+});
 
 /*API*/
 router.get('/positions', (req, res)=>{
@@ -74,17 +84,42 @@ router.post('/apply', (req, res)=>{
 router.post('/update', (req, res)=>{
 	if(req.files.file === undefined){
 		res.status(400).json({msg:'Please include your resume as part of your application'});
+		return;
 	}else if(req.files.file.type!=='application/pdf'){//415
 		res.status(415).json({msg:'Invalid file type. Please upload a PDF'});
+		return;
 	}else if(users[req.cookies.userID]===undefined){
 		res.status(400).json({msg:'You have not applied to any positions yet. If you would like apply to a position please see our "Positions" page'});
-	}else if(false){//TODO sha1 mismatch out
-		res.status(400).json({msg:'Sorry, the CV you uploaded does not match your profile'});
-	}else if(false){//TODO sha1 is good
-		res.status(200).json({msg:'Your profile has been updated! flag{ sha1-Collisions_ARR_C00L }'});
-	}else{
-		res.status(500).json({msg:'An unknown error occured'});
+		return;
 	}
+
+	// find hashes
+	let hashValue0='', hashValue1='';
+	users[req.cookies.userID].file1 = req.files.file.path;
+
+	let hash0Promise = sha1(users[req.cookies.userID].file0).then(hash=>{
+		return hash;
+	}).catch(err=>{
+		throw new Error(err);
+	});
+
+	let hash1Promise = sha1(users[req.cookies.userID].file1).then(hash=>{
+		return hash;
+	}).catch(err=>{
+		throw new Error(err);
+	});
+	Promise.all([hash0Promise, hash1Promise]).then(hashes=>{
+		console.log(hashes);
+		if(hashes[0]!==hashes[1]){
+			res.status(400).json({msg:'Sorry, the CV you uploaded does not match your profile'});
+			return;
+		}else if(hashes[0]===hashes[1]){
+			res.status(200).json({msg:'Your profile has been updated! flag{ sha1-Collisions_ARR_C00L }'});
+			return;
+		}
+		res.status(500).json({msg:'An unknown error occured'});
+	});
+
 });
 /*END API*/
 

@@ -10,5 +10,9 @@
 			</div>
 			<button class="btn btn-primary" id="submit" ng-click="recruit.submit()">Upload</button>
 		</form>
+		<div class="alert-container push-top">
+			<div class="alert alert-danger" role="alert" ng-if="recruit.hasError">{{recruit.errorMessage}}</div>
+			<div class="alert alert-success" role="alert" ng-if="recruit.hasSuccess">{{recruit.successMessage}}</div>
+		</div>
 	</div>
 </div>
