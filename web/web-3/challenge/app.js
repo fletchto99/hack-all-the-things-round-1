@@ -140,7 +140,7 @@ router.post('/update', (req, res)=>{
 			if (hashes[2] === hashes[3]) {
 				res.status(400).json({msg:'You\'ve already uploaded that resume! No changes detected?'});
 			} else {
-				res.status(200).json({msg:'Your profile has been updated! flag{sha1-Collisions_ARR_C00L}'});
+				res.status(200).json({msg:'Your profile has been updated! flag{sha1_c0ll1s1ons_AR3_C00L}'});
 			}
 			return;
 		}
