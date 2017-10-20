@@ -29,7 +29,7 @@ h1{
 	box-shadow: 0px 0px 23px #7ebce0;
 	background: rgba(140, 182, 208, 0.52);
 }
-.btn-cool{
+.btn-cool,.btn-cool:focus{
 	color: #98bfd6;
 	background-color: rgba(0, 0, 0, 0.5);
 	border-color: #638396;

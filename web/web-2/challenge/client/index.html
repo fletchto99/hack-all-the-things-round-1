@@ -26,35 +26,51 @@
 					<div class="panel-body">
 						<form method="POST">
 							<div class="form-group">
-								<input type="email" class="form-control form-cool" placeholder="Email">
+								<input type="email" class="form-control form-cool" placeholder="Email" id="email">
 							</div>
 							<div class="form-group">
-								<input type="password" class="form-control form-cool" placeholder="Password">
+								<input type="password" class="form-control form-cool" placeholder="Password" id="password">
 							</div>
-							<button type="submit" class="btn btn-cool">Submit</button>
+							<button type="submit" class="btn btn-cool" id="login-btn">Submit</button>
 						</form>
 					</div>
 				</div>
-  			</div>
-  		</div>
+        <div class="alert alert-danger" role="alert" id="error-msg"></div>
+        </div>
+      </div>
   	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-	$(function(){
+     $(function(){
         var h = $(window).height();
         var w = $(window).width();
-        $.get("api/bg",{h:h,w:w}, function(data) {
-            for(var i=0;i<data.length;i++){
-                $(".bg-container").append($(data[i]));
-            }
-    		var bgArray = $(".bg-container .binary");
-    		for(var i=0; i<bgArray.length;i++){
-    			bgArray[i].style.opacity = Math.random();
-    		}
+        $.get("api/bg",{h:h,w:w}, function(data){
+          for(var i=0;i<data.length;i++){
+            $(".bg-container").append($(data[i]));
+          }
+          var bgArray = $(".bg-container .binary");
+          for(var i=0; i<bgArray.length;i++){
+            bgArray[i].style.opacity = Math.random();
+          }
         });
-	});
+
+        $("#error-msg").css('display','none');
+
+        $("#login-btn").on('click', function(e){
+          e.preventDefault();
+          $("#error-msg").css('display','none');
+          var data = {
+            email: $("#email").val(),
+            password: $("#password").val()
+          }
+          $.post("api/login",data, function(res){
+            $("#error-msg").css('display','block');
+            $("#error-msg").html(res);
+          });
+        });
+     });
     </script>
   </body>
 </html>
