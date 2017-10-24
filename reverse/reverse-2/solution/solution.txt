@@ -1,0 +1,8 @@
+Solution:
+- opening challange.zip with a text editor, you will see that it appears to be text that ends with an "=" (think base64)
+- change the .zip extention to .txt
+- upload the new .txt file to https://www.base64decode.org/ ; it will automatically download the decoded file
+- change the extesion back to .zip
+- the ouput is a .png with a QR code. Scan the code for the flag
+
+- bonus: base64 decode the filename of the .png (omitting ".png")
