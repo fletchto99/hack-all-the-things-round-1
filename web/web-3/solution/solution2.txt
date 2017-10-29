@@ -1,0 +1,7 @@
+Hint: We have a new bug bounty program. Contact us securly if you have found a vulnerability.
+
+Solution:
+ - There is a new standard for security researchers to contact companies which is: security.txt (for more info: https://securitytxt.org/)
+ - going to this file will point to pgp-public-key.txt
+ - E Corp has accidentaly published not only their public key but also their private key (pgp-private-key.txt). Yes this actually happens, Adobe did it: https://www.neowin.net/news/adobes-product-security-team-publishes-private-pgp-key-online
+ - One layer of the private key is base64 encoding. This is known either by knowing things about pgp or noticing the "=" at the end. Base64 decoding will reveal the flag within a bunch of psudo-random binary.

@@ -1,0 +1,9 @@
+# If you are a security researcher and have found a vulnerability with our web
+# application, please contact us with the details and a POC (proof of concept) for
+# the vulnerability.
+# Please contact us using our PGP key.
+#
+# We have a bug bounty program and will make it worth your while.
+#
+Contact: security@fake-email.com
+Encryption: ./pgp-public-key.txt
