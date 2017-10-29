@@ -1,0 +1,3 @@
+IRC pcap with password to extract zip in network-3.
+
+The flag is flag{Irc_ProToCol_Captures}

@@ -1,0 +1,3 @@
+Flag is in zip which has been downloaded via FTP
+
+Read out zip from pcap and extract the data -- the password comes from network-2 where the password is "Sup3Rs3CurEP4Ssw0Rd!!!!"
