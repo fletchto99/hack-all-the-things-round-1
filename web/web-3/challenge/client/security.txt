@@ -5,5 +5,5 @@
 #
 # We have a bug bounty program and will make it worth your while.
 #
-Contact: security@fake-email.com
+Contact: security@fake-e-corp.com
 Encryption: ./pgp-public-key.txt

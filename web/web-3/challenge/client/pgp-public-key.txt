@@ -1,5 +1,6 @@
 -----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: BCPG C# v1.6.1.0
+Comment: This one isn't the flag!
 
 mQENBFn18QcBCACMnFsZq6CFBItar8y7tJ9BY4kGkRfzgsm5G9HtUAOXOCSXsL+Q
 mNaFJxC4eXTAhQN3chf7B9KkkFAPchTllNPCtLaQssxz+Dg0Oro6GuJLckYIPBh8

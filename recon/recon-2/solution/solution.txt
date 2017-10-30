@@ -1,0 +1,3 @@
+Adobe released their PGP private key when conforming to the security.txt standard. web-3 also makes the same mistake
+
+flag{d0nt_pulL_4n_Ad0b3}
