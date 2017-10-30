@@ -1,0 +1,4 @@
+A simple lookup on crt.sh will reveal the flag. The subdomain which is the answer is quite obvious.
+
+
+flag{c3rt-tr4nspar3ncy-1s-c00l}
