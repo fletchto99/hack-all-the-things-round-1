@@ -7,3 +7,6 @@ Open in gimp as raw data
 Set wxh to 1920x1080
 
 Go to offset 229688649
+
+
+flag{what_is_mspaint}

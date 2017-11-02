@@ -1,0 +1,7 @@
+vol.py filescan -f dump.raw --profile Win7SP1x86_23418
+vol.py mftparser -f dump.raw --profile Win7SP1x86_23418
+
+flag: flag{dont_leave_important_f1les_in_the_trash}
+
+also:
+Employee DNS: 34.194.243.245
