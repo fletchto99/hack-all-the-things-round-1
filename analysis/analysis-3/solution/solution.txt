@@ -1,0 +1,9 @@
+vol.py imageinfo -f dump.raw
+vol.py proclist -f dumpy.raw --profile Win7SP1x86_23418
+vol.py memdump -f dump.raw --profile Win7SP1x86_23418 -p 2176 -D data/
+
+Open in gimp as raw data
+
+Set wxh to 1920x1080
+
+Go to offset 229688649
