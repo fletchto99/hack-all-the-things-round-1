@@ -3,3 +3,5 @@ gcc crackme.c -o crackme //easy mode
 
 
 Run binary / run in GDB and notice it is taking forever to do shit. Run in GDB
+
+flag{B1naRy_analys1s_ftw}

@@ -54,6 +54,21 @@ void msg(int msg) {
     }
 }
 
+void msg2(int msg) {
+    if (msg == 1) {
+      printf("Probably doing useless computations\n");
+    } else if(msg == 2) {
+      printf("Time for a nap\n");
+    } else if (msg == 3) {
+      printf("Oh my im sleepy\n");
+    } else if (msg == 4) {
+      printf("You know that its going to take years to get output right?\n");
+    } else {
+      printf("Yawn\n");
+    }
+}
+
+
 int main( int argc, char** argv ) {
   // some anti-debugging techniques...
   if (ptrace(PTRACE_TRACEME, 0, 1, 0) < 0) {
@@ -80,7 +95,7 @@ int main( int argc, char** argv ) {
       sleep_2(ts);
 
       //Disply another nice message
-      msg(rand() % 5);
+      msg2(rand() % 5);
 
       //xor with key
       decrypt_string(f,25);
