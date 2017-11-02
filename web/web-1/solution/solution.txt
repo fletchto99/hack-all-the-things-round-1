@@ -1,0 +1,3 @@
+This abuses the state of a hash function allowing you to extend the integrity check without knowing the salt value.
+
+flag{you_just_needed_the_right_3xtension}

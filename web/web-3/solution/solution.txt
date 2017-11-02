@@ -2,3 +2,4 @@ create two PDFs with the same sha1 checksum. The example in the sha1collider/ ca
 upload the first one when applying for the position
 upload the second one to the update profile page
 
+revealing: flag{sha1_c0ll1s1ons_AR3_C00L}

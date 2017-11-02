@@ -1,3 +1,6 @@
 extract all the 0s and 1s from the background
 extract the alternating 0s and1s to just get the middle part where there is actual data
 convert the binary to ASCII
+
+
+Revaling flag{b1Nary_nInJ4s}
