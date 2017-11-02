@@ -1,3 +1,3 @@
-Multiline-comment with the text you
+Multiline-comment
 
 flag{you_are_not_alone}

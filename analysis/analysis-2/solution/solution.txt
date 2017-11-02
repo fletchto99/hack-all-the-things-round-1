@@ -1,1 +1,3 @@
 The height of the bitmap was manually changed in the header. At byte offset 20 (0x14) the value can be modified to reveal the flag
+
+flag{Wh4t_1s_st3Go}

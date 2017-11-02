@@ -1,0 +1,3 @@
+The network-2 challenge gave you the wifi password needed to decrypt the traffic.
+
+Decytpting the traffic reveals an http request to with the param flag{w3lc0m3_t0_ev1lcorp}

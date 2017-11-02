@@ -1,0 +1,5 @@
+There's a hint to visit the robots txt file.
+
+When going to the robots text file then you see: Disallow: /flag-4huypcd703nf7e93fjpwagne.txt
+
+flag{aint_n0_g00gl3_h3r3}

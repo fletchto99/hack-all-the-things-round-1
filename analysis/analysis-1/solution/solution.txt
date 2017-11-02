@@ -1,1 +1,4 @@
 Using binwalk you will notice there are two images. Use dd to extract the data (binwalk --dd='jpeg:jpg' banner.jpg)
+
+
+flag{Wh0_h1d_th4t_th3r3}

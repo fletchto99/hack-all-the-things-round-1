@@ -1,0 +1,5 @@
+The flag is simply hidden with a single byte xor. This can easily be brute forced with very few lines of code.
+
+See second half of encypt.py
+
+flag{I_4M_4_L4ZY_3MPLOY3E}

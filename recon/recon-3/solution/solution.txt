@@ -1,1 +1,3 @@
 The employee file dump has the ip of the internal dns server. Resolving the domain with that server reveals the flag.
+
+flag{1nternal_s1t3s_shouldnt_be_publ1c}
