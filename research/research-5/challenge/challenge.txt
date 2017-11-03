@@ -1,0 +1,1 @@
+This type of attack can dos the system WITHOUT requring a network of zombie computers and huge amounts of bandwith.
