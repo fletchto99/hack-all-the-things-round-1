@@ -1,0 +1,3 @@
+This method implemented by the OS to make it more difficult to exploit buffer overflows. It prevents the attacker from being able to directly jump to their malicious code by doing something to the positions of items in memory.
+
+format: flag{method} where the method is all lowercase
