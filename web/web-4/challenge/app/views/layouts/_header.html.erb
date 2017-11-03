@@ -1,0 +1,16 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Bank Corp", root_path, id: "logo" %></li>
+        <li><%= link_to 'Home', root_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to "Today's Date", '/pages/date' %></li>
+          <li><%= link_to "log out", logout_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "log in", login_path %></li>
+        <% end %>
+      </ul>
+    </nav>
+  </div>
+</header>

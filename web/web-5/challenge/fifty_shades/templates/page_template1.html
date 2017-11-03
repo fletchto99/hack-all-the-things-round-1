@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <head><meta http-equiv="Refresh" content="{{ time }}; URL={{ url }}"></head>
+        <title>Please wait...</title>
+        <style>
+            body { background:#000; color:#FFF; margin:20px; font-size:2em; text-align:center }
+            a { color:#FFF }
+        </style>
+    </head>
+<body>
+    <!-- href="2838023a77" -->
+    <img src="header.png"/><br><br>
+    <span id="countdown">{{ time }}</span><br>
+    <script>
+    // Location: 9a1158154d
+    var s = 5;
+    var t = setInterval(function(){s--;document.getElementById("countdown").textContent = s;if(s <= 0) clearInterval(t);},1000);
+
+    </script>
+    <!-- <meta http-equiv="Refresh" content="0; URL=d82c8d1619"> -->
+</body>
+</html>

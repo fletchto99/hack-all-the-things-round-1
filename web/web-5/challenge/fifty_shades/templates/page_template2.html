@@ -1,0 +1,22 @@
+<html>
+<head>
+<head></head>
+<title>Please wait...</title>
+<style>
+body { background:#000; color:#FFF; margin:20px; font-size:2em; text-align:center }
+a { color:#FFF }
+</style>
+</head>
+<body>
+<!-- href="38b3eff8ba" -->
+<img src="header.png"/><br><br>
+<span id="countdown">{{ time }}</span><br>
+<script>
+// Location: ec8956637a
+    var s = {{ time }};
+var t = setInterval(function(){s--;document.getElementById("countdown").textContent = s;if(s <= 0) clearInterval(t);},1000);
+setTimeout(function(){window.location="{{ url }}";},10000);
+</script>
+<!-- <meta http-equiv="Refresh" content="0; URL=6974ce5ac6"> -->
+</body>
+</html>

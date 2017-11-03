@@ -1,0 +1,22 @@
+<html>
+<head>
+<head></head>
+<title>Please wait...</title>
+<style>
+body { background:#000; color:#FFF; margin:20px; font-size:2em; text-align:center }
+a { color:#FFF }
+</style>
+</head>
+<body>
+<!-- href="19f3cd308f" -->
+<img src="header.png"/><br><br>
+<span id="countdown">25</span><br><a id="link" style="display:none" href="3ac8d8d3f9">Click here to be redirected</a>
+<script>
+// Location: 03c6b06952
+var s = 25;
+var t = setInterval(function(){s--;document.getElementById("countdown").textContent = s;if(s <= 0) clearInterval(t);},1000);
+setTimeout(function(){document.getElementById("link").style.display = "inline";},25000);
+</script>
+<!-- <meta http-equiv="Refresh" content="0; URL=c24cd76e1c"> -->
+</body>
+</html>
