@@ -1,0 +1,4 @@
+This now defunct method of securing communications made use of a few rotor disks, a plugboard and some lights. How many possible states did the basic version offer assuming the plugboard has 10 pairs connected?
+
+Format: flag{number} where the number is only digits.
+
