@@ -1,1 +1,1 @@
-This type of attack can dos the system WITHOUT requring a network of zombie computers and huge amounts of bandwith.
+This type of attack can perform DOS the system without requiring a network of zombie computers and huge amounts of bandwith.

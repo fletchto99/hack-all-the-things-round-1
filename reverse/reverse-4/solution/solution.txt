@@ -1,1 +1,3 @@
 See blog.fletchto99.com on how to remove passwords
+
+flag{macr0s_ar3_ann0y1nG}
